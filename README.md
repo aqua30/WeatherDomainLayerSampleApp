@@ -7,8 +7,8 @@ The projet demonstrate the usage of having a contract between our api responses 
 [Click here to read](https://saurabhpant.medium.com/a-better-way-to-pass-data-from-api-to-composable-jetpack-compose-android-b844ec1da072)
 
 ## Weather apis used
-- Visual crossing api: https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/New york?unitGroup=us&include=events%2Ccurrent&key=<your api key>&contentType=json
-- Open weather api: https://api.openweathermap.org/data/2.5/weather?lat=28.7041&lon=77.1025&appid=<your api key>
+- Visual crossing api: https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/New york?unitGroup=us&include=events%2Ccurrent&key=ApiKey&contentType=json
+- Open weather api: https://api.openweathermap.org/data/2.5/weather?lat=28.7041&lon=77.1025&appid=ApiKey
 
 ## Purpose of this project?
 
