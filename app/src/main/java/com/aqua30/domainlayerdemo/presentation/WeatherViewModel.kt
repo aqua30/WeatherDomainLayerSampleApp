@@ -8,6 +8,7 @@ import com.aqua30.domainlayerdemo.data.common.DataProvider
 import com.aqua30.domainlayerdemo.data.common.Resource
 import com.aqua30.domainlayerdemo.domain.models.WeatherScreenState
 import com.aqua30.domainlayerdemo.domain.use_cases.GetWeatherUseCase
+import com.aqua30.domainlayerdemo.domain.use_cases.GetWeatherUseCaseImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -33,7 +34,7 @@ class WeatherViewModel @Inject constructor(
 
     private fun getWeatherReport(provider: DataProvider) {
         viewModelScope.launch {
-            weatherUseCase(provider).collect { resource ->
+            weatherUseCase.fetch(provider).collect { resource ->
                 when(resource) {
                     is Resource.Success -> {
                         _weatherState.value = WeatherScreenState(
