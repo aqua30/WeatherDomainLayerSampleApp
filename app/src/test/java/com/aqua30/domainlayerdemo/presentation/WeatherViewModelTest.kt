@@ -1,15 +1,18 @@
 package com.aqua30.domainlayerdemo.presentation
 
+import com.aqua30.domainlayerdemo.ViewModelRule
 import com.aqua30.domainlayerdemo.data.common.Resource
 import com.aqua30.domainlayerdemo.domain.models.WeatherData
 import com.aqua30.domainlayerdemo.domain.use_cases.FakeWeatherUseCase
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 
 /**
@@ -18,12 +21,14 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 class WeatherViewModelTest {
 
+    @get: Rule
+    val dispatcherRule = ViewModelRule()
+
     private lateinit var viewModel: WeatherViewModel
     private lateinit var fakeWeatherUseCase: FakeWeatherUseCase
 
     @Before
     fun setUp() {
-        Dispatchers.setMain(UnconfinedTestDispatcher())
         fakeWeatherUseCase = FakeWeatherUseCase()
         viewModel = WeatherViewModel(fakeWeatherUseCase)
     }
