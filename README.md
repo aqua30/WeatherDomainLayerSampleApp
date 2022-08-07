@@ -22,4 +22,5 @@ The projet demonstrate the usage of having a contract between our api responses 
 - How to manage different layers of concerns while making an api call.
 - How to manage ui state effectively.
 - How to manage interactions between different layers.
+- Unit testing
 
